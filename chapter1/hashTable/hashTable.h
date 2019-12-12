@@ -5,11 +5,16 @@
 class Node {
   int key;
   std::string value;
+  Node *neighbor;
 public:
-  Node();
+  Node ();
+  Node (const int key, const std::string value);
   void setNode (const int key, const std::string value);
+  void setNeighbor (const int key, const std::string value);
   int getKey () const;
   std::string getValue () const;
+  Node getNeighbor ();
+  bool hasNeighbor () const;
 };
 
 class HashMap {
