@@ -1,22 +1,9 @@
-# CC = /Library/Developer/CommandLineTools/usr/bin/g++
-# CCFLAGS = -g -Wall
-# DEPS = main.h
-# OBJ = main.o menu.o fileRead.o addRecord.o delRecord.o showRecord.o saveRecord.o bubbleSort.o merge.o splitList.o listSort.o
-#
-# %.o: %.cpp $(DEPS)
-# 	$(CC) -c -o $@ $< $(CCFLAGS)
-#
-# linkedList_exe: $(OBJ)
-# 	g++ -o $@ $^ $(CCFLAGS)
-#
-# clean:
-# 	rm *.o linkedList_exe
 CC = /Library/Developer/CommandLineTools/usr/bin/g++
-CCFLAGS = -g -Wall
-DEPS = main.h
-OBJ = main.o
+CCFLAGS = -g -Wall -std=c++17
+DEPS = hashTable.h
+OBJ = main.o hashTable.o
 
-%.o: %.cpp
+%.o: %.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CCFLAGS)
 
 test_exe: $(OBJ)
