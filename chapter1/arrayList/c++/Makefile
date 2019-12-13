@@ -1,13 +1,13 @@
 CC = /Library/Developer/CommandLineTools/usr/bin/g++
 CCFLAGS = -g -Wall -std=c++17
-DEPS = hashTable.h
-OBJ = main.o hashTable.o
+DEPS = arrayList.h
+OBJ = main.o
 
 %.o: %.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CCFLAGS)
 
-hashTable_exe: $(OBJ)
+arrayList_exe: $(OBJ)
 	$(CC) -o $@ $^ $(CCFLAGS)
 
 clean:
-	rm *.o hashTable_exe
+	rm *.o arrayList_exe
